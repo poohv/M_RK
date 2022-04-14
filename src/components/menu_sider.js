@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const menu_sider = () => {
+function Menu_sider() {
+
+  const [statusdata, setStatusdata] = useState(false);
+  const [multicheck, setMulticheck] = useState();
+  function clickSt(){
+
+        setStatusdata(!statusdata); 
+      
+        console.log(multicheck);
+       
+  }
 
 
     return (
         <div>
           <aside class="main-sidebar sidebar-dark-primary elevation-4">
    
-    <a href="#" class="nav-link" style="text-align: center;">
-      <img src="https://imgs.jobkorea.co.kr/img1/_whitebg/200X80/Co_Logo/Logo/2021/5/25/2y3xo008Rq_jXptfpq3r2eq0eoYgUm_ww2oq.png?v=202204131255&hash=r&serviceCode=CL" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .9; width: 100px; margin:auto;"/>
-      <span class="brand-text font-weight-light"></span>
-    </a>
+          <a href="/" class="nav-link" style={{textAlign:'center'}}>
+            <img src="https://imgs.jobkorea.co.kr/img1/_whitebg/200X80/Co_Logo/Logo/2021/5/25/2y3xo008Rq_jXptfpq3r2eq0eoYgUm_ww2oq.png?v=202204131255&hash=r&serviceCode=CL" alt="Logo" class="brand-image img-circle elevation-3"/>
+            <span class="brand-text font-weight-light"></span>
+          </a>
 
-   
-    <div class="sidebar">
-      
+    <div class="sidebar">   
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"/>
@@ -26,33 +34,33 @@ const menu_sider = () => {
           </div>
         </div>
       </div>
-
-     
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
          
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class={  multicheck==0 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(0); }}  >
               <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                관리자
-                <i class="right fas fa-angle-left"></i>
-              </p>
+                <p>관리자
+                  <i class="right fas fa-angle-left"></i>   
+                </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="http://localhost:3000/" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>공지사항</p>
-                </a>
+            <ul class="nav nav-treeview" >
+              
+              <li class="nav-item">  
+              <Link to="/" class="nav-link"  onClick={()=>{setMulticheck(0); }}>
+                 <i class="far fa-circle nav-icon"></i>
+                   공지 사항
+                 
+                  </Link>   
               </li>
-              <li class="nav-item">
-                <a href="http://localhost:3000/chart" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>하트추이 가수 등록</p>
-                </a>
+              <li class="nav-item">                  
+                 <Link to="/chart" class="nav-link" onClick={()=>{setMulticheck(0); }}>
+                 <i class="far fa-circle nav-icon"></i>
+                   하트추이 가수 등록
+                 
+                  </Link>             
               </li>
-              <li class="nav-item" id="test1">
+              <li class="nav-item" id="test1" onClick={()=>{setMulticheck(0); }}>
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>하트추이 곡 등록</p>
@@ -61,16 +69,17 @@ const menu_sider = () => {
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class={  multicheck==1 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(1); }}  >
               <i class="nav-icon fas fa-th"></i>
               <p>
+                
                 R
                 <i class="fas fa-angle-left right"></i>
               
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+              <li class="nav-item" onClick={()=>{setMulticheck(1); }} >
                 <a href="pages/layout/top-nav.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>차트 데이터</p>
@@ -79,7 +88,7 @@ const menu_sider = () => {
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#"  class={  multicheck==2 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(2); }}>
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 MELON
@@ -97,7 +106,7 @@ const menu_sider = () => {
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#"  class={  multicheck==3 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(3); }}>
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Genie
@@ -114,7 +123,7 @@ const menu_sider = () => {
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#"  class={ multicheck==4 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(4); }}>
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Youtube
@@ -131,13 +140,11 @@ const menu_sider = () => {
             </ul>
           </li>                     
         </ul>
-      </nav>
-     
-    </div>
-    
+      </nav>   
+    </div> 
   </aside>  
         </div>
     );
 };
 
-export default menu_sider;
+export default Menu_sider;

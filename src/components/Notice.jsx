@@ -1,10 +1,6 @@
-import React, { useState, useEffect } from "react";
-import DataTable from "react-data-table-component";
-import datadummy from "../data.json";
+import React from "react";
 
-function Main() {
-  const [datalist, setDatalist] = useState({});
-
+const Notice = () => {
   return (
     <div class="row">
       <div class="col-md-6" style={{ marginTop: "10px" }}>
@@ -118,10 +114,19 @@ function Main() {
               </table>
             </div>
           </div>
+
+          <div class="card-footer clearfix">
+            <a
+              href="javascript:void(0)"
+              class="btn btn-sm btn-info float-right"
+            >
+              글쓰기
+            </a>
+          </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Main;
+export default Notice;

@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Chart as ChartJS, registerables } from "chart.js";
 import { Line } from "react-chartjs-2";
 import datadummy from "../data.json";
 import { Button } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
+import DataTable from "react-data-table-component";
+
 ChartJS.register(...registerables);
 
 function ChartList() {
+  const location = useLocation();
   const [datalist, setDatalist] = useState({ numbern: 10 });
 
   function numadd() {
@@ -16,6 +20,8 @@ function ChartList() {
     });
     console.log(datalist.numbern);
   }
+
+  useEffect(() => {}, [datalist]);
 
   const options = {
     responsive: true,
@@ -52,6 +58,46 @@ function ChartList() {
       },
     ],
   };
+
+  const columns3 = [
+    {
+      name: "순위",
+      selector: (row) => row.ranking,
+      sortable: true,
+      grow: 0,
+      center: true,
+      compact: true,
+      style: {
+        color: "black",
+      },
+    },
+    {
+      name: "1시간전",
+      selector: (row) => row.pre_ranking,
+      compact: true,
+
+      sortable: true,
+      center: true,
+    },
+    {
+      name: "가수",
+      selector: (row) =>
+        row.song.map((res) => res.artists.map((data) => data.name)),
+      sortable: true,
+      center: true,
+    },
+    {
+      name: "제목",
+      selector: (row) => row.song.map((res) => res.name),
+      sortable: true,
+      center: true,
+    },
+  ];
+
+  const handleChange = ({ selectedRows }) => {
+    console.log("Selected Rows: ", selectedRows);
+  };
+
   return (
     <div>
       <Line data={data} options={options} width={700} height={200} />
@@ -60,6 +106,18 @@ function ChartList() {
         <div class="container-fluid">
           <div class="card">
             <div class="card-header">
+              <h3 class="card-title">멜론 top 100</h3>
+            </div>
+            <div class="card-body">
+              <DataTable
+                pagination
+                columns={columns3}
+                data={datadummy.data.map((res) => res)}
+                selectableRows
+                onSelectedRowsChange={handleChange}
+              />
+            </div>
+            {/* <div class="card-header">
               <h3 class="card-title">DataTable with default features</h3>
             </div>
 
@@ -89,9 +147,9 @@ function ChartList() {
                     </tr>
                   ))}
                 </tbody>
-              </table>
+              </table> 
               <Button onClick={numadd}>더보기</Button>
-            </div>
+            </div>*/}
           </div>
         </div>
       </section>
