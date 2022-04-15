@@ -47,7 +47,7 @@ function Menu_sider() {
             <ul class="nav nav-treeview" >
               
               <li class="nav-item">  
-              <Link to="/" class="nav-link"  onClick={()=>{setMulticheck(0); }}>
+              <Link to="/notice" class="nav-link"  onClick={()=>{setMulticheck(0); }}>
                  <i class="far fa-circle nav-icon"></i>
                    공지 사항
                  

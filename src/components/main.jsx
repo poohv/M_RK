@@ -118,6 +118,11 @@ function Main() {
               </table>
             </div>
           </div>
+          <div class="card-footer clearfix">
+            <a href="/notice" class="btn btn-sm btn-info float-right">
+              더보기
+            </a>
+          </div>
         </div>
       </div>
     </div>

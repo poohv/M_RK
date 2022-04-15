@@ -92,34 +92,13 @@ const Notice = () => {
                       </div>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <a href="pages/examples/invoice.html">OR7429</a>
-                    </td>
-                    <td>Samsung Smart TV</td>
-                    <td>
-                      <span class="badge badge-info">Processing</span>
-                    </td>
-                    <td>
-                      <div
-                        class="sparkbar"
-                        data-color="#00c0ef"
-                        data-height="20"
-                      >
-                        90,80,-90,70,-61,83,63
-                      </div>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
 
           <div class="card-footer clearfix">
-            <a
-              href="javascript:void(0)"
-              class="btn btn-sm btn-info float-right"
-            >
+            <a href="/NoticeDetail" class="btn btn-sm btn-info float-right">
               글쓰기
             </a>
           </div>

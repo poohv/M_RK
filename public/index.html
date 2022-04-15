@@ -31,6 +31,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="%PUBLIC_URL%/dist/css/adminlte.min.css">  
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.min.css">
 
     <title>MAVRK_System</title>
   </head>
@@ -42,7 +43,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Home</a>
+          <a href="/" class="nav-link">Home</a>
         </li>       
       </ul>
     </nav>
@@ -100,6 +101,7 @@
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="%PUBLIC_URL%/plugins/summernote/summernote-bs4.min.js"></script>
 
 <script>
 
@@ -140,6 +142,14 @@ $(function () {
     "autoWidth": false,
     "responsive": true,
   });
+    // Summernote
+    $('#summernote').summernote({
+      "height": 380
+      
+
+    })
+
+  
 });
 </script>
 </html>
