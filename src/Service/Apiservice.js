@@ -11,9 +11,8 @@ class apiservice {
     }
 
 
-    test(file){
-        return axios.post(API_BASE_URL+"test",file  );
-        
+    noticedetail(params){
+        return axios.post(API_BASE_URL+"noticedatail",params );   
     }
 
 };

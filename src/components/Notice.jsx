@@ -1,13 +1,25 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const Notice = () => {
+function Notice(){
+  let navigate = useNavigate();
+
+  function clikeapinum(no) {
+    no.preventDefault();
+    const { name } = no.target;
+    console.log("name: "+name);
+    navigate("/noticedetail", {  state:{
+      name
+    }, });
+  }
+
   return (
     <div class="row">
-      <div class="col-md-6" style={{ marginTop: "10px" }}>
+      <div class="col-md-12" style={{ marginTop: "10px" }}>
         <div class="card">
           <div class="card-header border-transparent">
             <h3 class="card-title">공지사항</h3>
-
+            
             <div class="card-tools">
               <button
                 type="button"
@@ -24,6 +36,9 @@ const Notice = () => {
                 <i class="fas fa-times"></i>
               </button>
             </div>
+            <a href="/Noticeadd" class="btn btn-sm btn-info float-right">
+              글쓰기
+            </a>
           </div>
 
           <div class="card-body p-0">
@@ -40,7 +55,7 @@ const Notice = () => {
                 <tbody>
                   <tr>
                     <td>
-                      <a href="pages/examples/invoice.html">OR9842</a>
+                      <a href="#"  name={"1"} onClick={clikeapinum}>OR9842</a>
                     </td>
                     <td>Call of Duty IV</td>
                     <td>
@@ -97,11 +112,11 @@ const Notice = () => {
             </div>
           </div>
 
-          <div class="card-footer clearfix">
-            <a href="/NoticeDetail" class="btn btn-sm btn-info float-right">
+          {/* <div class="card-footer clearfix">
+            <a href="/Noticeadd" class="btn btn-sm btn-info float-right">
               글쓰기
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
