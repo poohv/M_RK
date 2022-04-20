@@ -99,7 +99,7 @@ function ChartList() {
   };
 
   return (
-    <div>
+    <div class="content-wrapper">
       <Line data={data} options={options} width={700} height={200} />
 
       <section class="content">

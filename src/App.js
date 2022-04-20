@@ -7,20 +7,26 @@ import Sidermenu from './components/menu_sider';
 import Notice from './components/Notice';
 import NoticeAdd from './components/NoticeAdd';
 import Noticedetail from './components/NoticeDetail';
+import Heartpg from './components/Heartpg';
+import Login from './components/Login';
+
+
 
 function App() {
-  return (
-   
   
+ 
+  return (
     <BrowserRouter>
-    <Sidermenu/>
+    <Sidermenu/> 
     <Routes>
-    <Route exact path = {"/"}  element = {<Main/>}></Route>
-    <Route exact path = {"/notice"}  element = {<Notice/>}></Route>
-    <Route exact path = {"/Noticedetail"}  element = {<Noticedetail/>}></Route>
+    <Route  path = {"/"}  element = {<Main/>}></Route>
+    <Route  path = {"/notice"}  element = {<Notice/>}></Route>
+    <Route  path = {"/Noticedetail"}  element = {<Noticedetail/>}></Route>
     <Route path=":keyword" element={<Noticedetail/>} />
-    <Route exact path = {"/Noticeadd"}  element = {<NoticeAdd/>}></Route>
-    <Route exact path = {"/chart"}  element = {<Barchart/>}></Route>
+    <Route  path = {"/Noticeadd"}  element = {<NoticeAdd/>}></Route>
+    <Route  path = {"/chart"}  element = {<Barchart/>}></Route>
+    <Route  path = {"/Heartpg"}  element = {<Heartpg/>}></Route>
+    <Route  path = {"/login"}  element = {<Login/>}></Route>   
     </Routes>
   </BrowserRouter>
   
