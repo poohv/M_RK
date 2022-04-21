@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 import { columns, data } from "../data";
 
-const Heartpg = () => {
+const HeartTitle = () => {
   const [filterText, setFilterText] = useState("");
   const [selectlist, setSelectlist] = useState("");
   const [nume, setNume] = useState(0);
@@ -33,7 +33,7 @@ const Heartpg = () => {
         <div class="col-md-12" style={{ marginTop: "10px" }}>
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">하트 추이 가수 등록</h3>
+              <h3 class="card-title">하트 추이 곡 등록</h3>
               <a
                 class="btn btn-sm btn-info float-right"
                 style={{ marginLeft: "5px" }}
@@ -52,7 +52,7 @@ const Heartpg = () => {
                 style={{ width: "500px", marginLeft: "30%" }}
               >
                 <div class="form-group row">
-                  <label class=" col-form-label">가수 검색</label>
+                  <label class=" col-form-label">곡 검색</label>
                   <div class="input-group col-sm-10">
                     <input
                       type="text"
@@ -91,4 +91,4 @@ const Heartpg = () => {
   );
 };
 
-export default Heartpg;
+export default HeartTitle;

@@ -3,23 +3,23 @@ import React from "react";
 export const columns = [
     {
       name: "Title",
-      selector: "title",
+      selector: row => row.title,
       sortable: true
     },
     {
       name: "Director",
-      selector: "director",
+      selector: row => row.director,
       sortable: true
     },
     {
       name: "Genres",
-      selector: "genres",
+      selector: row => row.genres,
       sortable: true,
       cell: d => <span>{d.genres.join(", ")}</span>
     },
     {
       name: "Year",
-      selector: "year",
+      selector: row => row.year,
       sortable: true
     }
   ];

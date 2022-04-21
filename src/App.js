@@ -8,6 +8,8 @@ import Notice from './components/Notice';
 import NoticeAdd from './components/NoticeAdd';
 import Noticedetail from './components/NoticeDetail';
 import Heartpg from './components/Heartpg';
+import HeartTitle from './components/HeartTitle';
+import ChartData from './components/ChartData';
 import Login from './components/Login';
 
 
@@ -26,6 +28,8 @@ function App() {
     <Route  path = {"/Noticeadd"}  element = {<NoticeAdd/>}></Route>
     <Route  path = {"/chart"}  element = {<Barchart/>}></Route>
     <Route  path = {"/Heartpg"}  element = {<Heartpg/>}></Route>
+    <Route  path = {"/Hearttitle"}  element = {<HeartTitle/>}></Route>
+    <Route  path = {"/chartdata"}  element = {<ChartData/>}></Route>
     <Route  path = {"/login"}  element = {<Login/>}></Route>   
     </Routes>
   </BrowserRouter>

@@ -68,11 +68,12 @@ function Menu_sider() {
                     
                       </Link>             
                   </li>
-                  <li class="nav-item" id="test1" onClick={()=>{setMulticheck(0); }}>
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>하트추이 곡 등록</p>
-                    </a>
+                  <li class="nav-item">
+                  <Link to="/hearttitle" class="nav-link" onClick={()=>{setMulticheck(0); }}>
+                    <i class="far fa-circle nav-icon"></i>
+                      하트추이 곡 등록
+                    
+                      </Link>  
                   </li>
                 </ul>
               </li>
@@ -87,11 +88,12 @@ function Menu_sider() {
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
-                  <li class="nav-item" onClick={()=>{setMulticheck(1); }} >
-                    <a href="pages/layout/top-nav.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>차트 데이터</p>
-                    </a>
+                  <li class="nav-item" >
+                  <Link to="/chartdata" class="nav-link" onClick={()=>{setMulticheck(0); }}>
+                    <i class="far fa-circle nav-icon"></i>
+                      차트 데이터
+                    
+                      </Link>  
                   </li>
                 </ul>
               </li>
