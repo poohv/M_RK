@@ -11,7 +11,7 @@ import Heartpg from './components/Heartpg';
 import HeartTitle from './components/HeartTitle';
 import ChartData from './components/ChartData';
 import Login from './components/Login';
-
+import InflowData from './components/InflowData';
 
 
 function App() {
@@ -31,6 +31,8 @@ function App() {
     <Route  path = {"/Hearttitle"}  element = {<HeartTitle/>}></Route>
     <Route  path = {"/chartdata"}  element = {<ChartData/>}></Route>
     <Route  path = {"/login"}  element = {<Login/>}></Route>   
+    <Route  path = {"/inflowdata"}  element = {<InflowData/>}></Route>   
+    
     </Routes>
   </BrowserRouter>
   

@@ -89,7 +89,7 @@ function Menu_sider() {
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item" >
-                  <Link to="/chartdata" class="nav-link" onClick={()=>{setMulticheck(0); }}>
+                  <Link to="/chartdata" class="nav-link" onClick={()=>{setMulticheck(1); }}>
                     <i class="far fa-circle nav-icon"></i>
                       차트 데이터
                     

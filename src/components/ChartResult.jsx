@@ -1,73 +1,149 @@
 import React from "react";
 import { Chart as ChartJS, registerables } from "chart.js";
 import { Line } from "react-chartjs-2";
+import * as datalist from "../components/Ifroute";
+
 ChartJS.register(...registerables);
 
 const ChartResult = () => {
   const hstyle = {
     margin: "0.3rem",
   };
-  const labels = ["a", "b", "c", "d"];
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: "melon Top 100",
-        data: [1, 50, 3, 80],
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-      {
-        label: "melon 실시간",
-        data: [57, 30, 78, 30],
-        borderColor: "rgb(53, 162, 235)",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
-      },
-      {
-        label: "gni 실시간",
-        data: [125, 90, 111, 5],
-        borderColor: "rgb(100, 100, 235)",
-        backgroundColor: "rgba(100, 100, 235, 0.5)",
-      },
-    ],
-  };
-
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "left",
-      },
-      title: {
-        display: true,
-        text: "윤종신 - 좋니",
-        font: {
-          size: 20,
-        },
-        color: "black",
-      },
-    },
-  };
 
   return (
-    <div class="card card-info card-outline">
-      <div class="card-header">
-        <button type="button" class="btn btn-info" style={hstyle}>
-          유임 이탈자 데이터
-        </button>
-        <button type="button" class="btn btn-info" style={hstyle}>
-          발매일 하트 추이
-        </button>
-        <button type="button" class="btn btn-info" style={hstyle}>
-          차트 자세히 보기
-        </button>
-      </div>
-      <div class="card-body">
-        <div class="text-muted">
-          <Line data={data} options={options} width={700} height={200} />
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <section class="col-lg-12 connectedSortable ui-sortable">
+            <div class="card card-info card-outline">
+              <div class="card-header ">
+                <a
+                  href="/inflowdata"
+                  type="button"
+                  class="btn btn-info"
+                  style={hstyle}
+                >
+                  유임 이탈자 데이터
+                </a>
+                <a type="button" class="btn btn-info" style={hstyle}>
+                  발매일 하트 추이
+                </a>
+                <button type="button" class="btn btn-info" style={hstyle}>
+                  차트 자세히 보기
+                </button>
+              </div>
+              <div class="card-body">
+                <div class="col-lg-10" style={{ marginLeft: "5rem" }}>
+                  <Line
+                    data={datalist.IntegrationData}
+                    options={datalist.IntegrationOption}
+                    height={200}
+                    width={1400}
+                  />
+                </div>
+                <div class="col-lg-8" style={{ marginLeft: "20rem" }}>
+                  <div class="card card-info card-outline">
+                    <div class="card-body table-responsive p-0">
+                      <table class="table table-bordered m-0">
+                        <thead>
+                          <tr>
+                            <th>멜론</th>
+                            <th>지니</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Some Product</td>
+                            <td>$13 USD</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 2번째 차트 데이터 */}
+            <div class="card ">
+              <div class="card-body">
+                <div class="col-lg-10" style={{ marginLeft: "5rem" }}>
+                  <Line
+                    data={datalist.GenderData}
+                    options={datalist.GenderOption}
+                    height={200}
+                    width={1400}
+                  />
+                </div>
+
+                <div class="col-lg-8" style={{ marginLeft: "20rem" }}>
+                  <div class="card card-info card-outline">
+                    <div class="card-body table-responsive p-0">
+                      <table class="table table-bordered m-0">
+                        <thead>
+                          <tr>
+                            <th>남</th>
+                            <th>여</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>10000</td>
+                            <td>50000</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 3번째 차트 데이터 */}
+            <div class="card">
+              <div class="card-body">
+                <div
+                  class="col-lg-10 text-muted"
+                  style={{ marginLeft: "5rem" }}
+                >
+                  <Line
+                    data={datalist.ChangeData}
+                    options={datalist.ChangeOption}
+                    height={200}
+                    width={1400}
+                  />
+                </div>
+
+                <div class="col-lg-8" style={{ marginLeft: "20rem" }}>
+                  <div class="card card-info card-outline">
+                    <div class="card-body table-responsive p-0">
+                      <table class="table table-bordered m-0">
+                        <thead>
+                          <tr>
+                            <th>날짜</th>
+                            <th>누적 좋아요</th>
+                            <th>일일 증가량</th>
+                            <th>증가량의 변화</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Some Product</td>
+                            <td>100</td>
+                            <td>1000</td>
+                            <td>2000</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

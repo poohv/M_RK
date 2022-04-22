@@ -12,15 +12,6 @@ const ChartData = () => {
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">차트 데이터</h3>
-              <a
-                class="btn btn-sm btn-info float-right"
-                style={{ marginLeft: "5px" }}
-              >
-                삭제
-              </a>
-              <a href="/#" class="btn btn-sm btn-info float-right">
-                등록
-              </a>
             </div>
 
             <form>
