@@ -46,7 +46,7 @@ function Menu_sider() {
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             
               <li class="nav-item">
-                <a href="#" class={  multicheck==0 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(0); }}  >
+                <a href="#" class={  multicheck===0 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(0); }}  >
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>관리자
                       <i class="right fas fa-angle-left"></i>   
@@ -56,21 +56,21 @@ function Menu_sider() {
                   
                   <li class="nav-item">  
                   <Link to="/notice" class="nav-link"  onClick={()=>{setMulticheck(0); }}>
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="nav-icon far fa-circle text-info"></i>
                       공지 사항
                     
                       </Link>   
                   </li>
                   <li class="nav-item">                  
                     <Link to="/heartpg" class="nav-link" onClick={()=>{setMulticheck(0); }}>
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="nav-icon far fa-circle text-info"></i>
                       하트추이 가수 등록
                     
                       </Link>             
                   </li>
                   <li class="nav-item">
                   <Link to="/hearttitle" class="nav-link" onClick={()=>{setMulticheck(0); }}>
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="nav-icon far fa-circle text-info"></i>
                       하트추이 곡 등록
                     
                       </Link>  
@@ -78,7 +78,7 @@ function Menu_sider() {
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class={  multicheck==1 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(1); }}  >
+                <a href="#" class={  multicheck===1 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(1); }}  >
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                     
@@ -90,15 +90,14 @@ function Menu_sider() {
                 <ul class="nav nav-treeview">
                   <li class="nav-item" >
                   <Link to="/chartdata" class="nav-link" onClick={()=>{setMulticheck(1); }}>
-                    <i class="far fa-circle nav-icon"></i>
-                      차트 데이터
-                    
+                    <i class="nav-icon far fa-circle text-info"></i>
+                      차트 데이터                
                       </Link>  
                   </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#"  class={  multicheck==2 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(2); }}>
+                <a href="#"  class={  multicheck===2 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(2); }}>
                   <i class="nav-icon fas fa-copy"></i>
                   <p>
                     MELON
@@ -108,15 +107,51 @@ function Menu_sider() {
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
+                  <Link to="/melontop" class="nav-link" onClick={()=>{setMulticheck(2); }}>
+                    <i class="nav-icon far fa-circle text-info"></i>
+                      top 100                
+                      </Link>  
+                  </li>
+                  <li class="nav-item">
+                    <Link to="/#" class="nav-link" onClick={()=>{setMulticheck(2); }}>
+                    <i class="nav-icon far fa-circle text-info"></i>
+                    Top 100순위 추위               
+                      </Link>  
+                  </li>
+                  <li class="nav-item">
                     <a href="pages/layout/top-nav.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Top Navigation</p>
+                      <p>Top 100 이용자수 추위</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/layout/top-nav.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>4주 차트 순위</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/layout/top-nav.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>4주 차트 순위 추이</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/layout/top-nav.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>실시간 차트</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/layout/top-nav.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>실시간 순위 추위</p>
                     </a>
                   </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#"  class={  multicheck==3 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(3); }}>
+                <a href="#"  class={  multicheck===3 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(3); }}>
                   <i class="nav-icon fas fa-chart-pie"></i>
                   <p>
                     Genie
@@ -133,7 +168,7 @@ function Menu_sider() {
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#"  class={ multicheck==4 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(4); }}>
+                <a href="#"  class={ multicheck===4 ?'nav-link active':'nav-link'}  onClick={()=>{clickSt(); setMulticheck(4); }}>
                   <i class="nav-icon fas fa-tree"></i>
                   <p>
                     Youtube

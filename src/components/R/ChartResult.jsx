@@ -1,8 +1,8 @@
 import React from "react";
 import { Chart as ChartJS, registerables } from "chart.js";
 import { Line } from "react-chartjs-2";
-import * as datalist from "../components/Ifroute";
-
+import * as datalist from "../Ifroute";
+import { Link } from "react-router-dom";
 ChartJS.register(...registerables);
 
 const ChartResult = () => {
@@ -17,20 +17,22 @@ const ChartResult = () => {
           <section class="col-lg-12 connectedSortable ui-sortable">
             <div class="card card-info card-outline">
               <div class="card-header ">
-                <a
-                  href="/inflowdata"
-                  type="button"
-                  class="btn btn-info"
-                  style={hstyle}
-                >
-                  유임 이탈자 데이터
+                <a type="button" style={hstyle}>
+                  <Link to="/inflowdata" class="btn btn-info">
+                    유임 이탈자 데이터
+                  </Link>
                 </a>
-                <a type="button" class="btn btn-info" style={hstyle}>
-                  발매일 하트 추이
+                <a type="button" style={hstyle}>
+                  <Link to="/reldata" class="btn btn-info">
+                    발매일 하트 추이
+                  </Link>
                 </a>
-                <button type="button" class="btn btn-info" style={hstyle}>
-                  차트 자세히 보기
-                </button>
+
+                <a type="button" style={hstyle}>
+                  <Link to="/chartdetail" class="btn btn-info">
+                    차트 자세히 보기
+                  </Link>
+                </a>
               </div>
               <div class="card-body">
                 <div class="col-lg-10" style={{ marginLeft: "5rem" }}>

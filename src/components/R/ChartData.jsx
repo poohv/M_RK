@@ -17,7 +17,7 @@ const ChartData = () => {
             <form>
               <div class="card-body" style={{ marginLeft: "20%" }}>
                 <div class="form-group row">
-                  <label class=" col-form-label">곡</label>
+                  <label class=" col-form-label">날짜</label>
                   <div class="input-group col-sm-7">
                     <input
                       type="text"
@@ -32,7 +32,7 @@ const ChartData = () => {
                       class=" col-form-label "
                       style={{ marginLeft: "10%" }}
                     >
-                      가수&nbsp;
+                      시간&nbsp;
                     </label>
                     <input
                       type="text"

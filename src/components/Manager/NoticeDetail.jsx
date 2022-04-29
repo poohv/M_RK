@@ -3,7 +3,7 @@ import styled from "styled-components";
 import draftToHtml from "draftjs-to-html";
 import { EditorState, convertToRaw } from "draft-js";
 import { useLocation } from "react-router-dom";
-import datadummy from "../data.json";
+import datadummy from "../../data.json";
 import { Editor } from "react-draft-wysiwyg";
 
 const IntroduceContent = styled.div`
@@ -27,7 +27,7 @@ function NoticeDetail() {
 
   const data = Array(1)
     .fill()
-    .map(() => datalist.map((d) => d.data.filter((res) => res.ranking == 2)));
+    .map(() => datalist.map((d) => d.data.filter((res) => res.ranking === 2)));
 
   console.log("넘어온값:" + params.state.name);
 
@@ -82,7 +82,7 @@ function NoticeDetail() {
 
   const selectnt = datalist.map((res) =>
     res.data
-      .filter((res) => res.ranking == 2)
+      .filter((res) => res.ranking === 2)
       .map((w) => (
         <div class="card-body">
           <div class="form-group">
