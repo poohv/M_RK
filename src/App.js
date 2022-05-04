@@ -14,7 +14,9 @@ import InflowData from './components/R/InflowData';
 import RelData from './components/R/ReleaseDate';
 import Chartdetail from './components/R/ChartDetail';
 import MelonTop from './components/Melon/MelonTop'
-
+import MelonDetail from './components/Melon/MelonDtail'
+import Toptrend from './components/Melon/TopTrend'
+import Topusertrend from './components/Melon/TopUserTrend'
 
 function App() {
   return (
@@ -35,6 +37,9 @@ function App() {
     <Route  path = {"/Reldata"}  element = {<RelData/>}></Route>   
     <Route  path = {"/Chartdetail"}  element = {<Chartdetail/>}></Route>   
     <Route  path = {"/melontop"}  element = {<MelonTop/>}></Route>   
+    <Route  path = {"/melondetail/:title"}  element = {<MelonDetail/>}></Route>   
+    <Route  path = {"/toptrend"}  element = {<Toptrend/>}></Route>   
+    <Route  path = {"/topusertrend"}  element = {<Topusertrend/>}></Route>   
     </Routes>
   </BrowserRouter>
   

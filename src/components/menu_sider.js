@@ -113,16 +113,16 @@ function Menu_sider() {
                       </Link>  
                   </li>
                   <li class="nav-item">
-                    <Link to="/#" class="nav-link" onClick={()=>{setMulticheck(2); }}>
+                    <Link to="/toptrend" class="nav-link" onClick={()=>{setMulticheck(2); }}>
                     <i class="nav-icon far fa-circle text-info"></i>
-                    Top 100순위 추위               
+                    Top 100순위 추이              
                       </Link>  
                   </li>
                   <li class="nav-item">
-                    <a href="pages/layout/top-nav.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Top 100 이용자수 추위</p>
-                    </a>
+                  <Link to="/topusertrend" class="nav-link" onClick={()=>{setMulticheck(2); }}>
+                    <i class="nav-icon far fa-circle text-info"></i>
+                    Top 100 이용자수 추이               
+                      </Link>  
                   </li>
                   <li class="nav-item">
                     <a href="pages/layout/top-nav.html" class="nav-link">

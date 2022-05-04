@@ -1,63 +1,102 @@
 import React, { useState, useEffect } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import datadummy from "../../data.json";
 import { Link } from "react-router-dom";
+import DatePicker from "react-datepicker";
 
-const MelonTop = () => {
-  const [filterText, setFilterText] = useState({ time: "", formatdate: "" });
-  const [startDate, setStartDate] = useState(new Date());
-  const [startDate2, setStartDate2] = useState();
+const TopUserTrend = () => {
+  const [filterText, setFilterText] = useState({
+    title: "",
+    singer: "",
+    time: null,
+    formatdate: new Date(),
+    chdate: "",
+    chtime: "",
+  });
 
   function click(e) {
-    if (startDate2 != null) {
-      setFilterText({
-        formatdate:
-          startDate.getFullYear() +
-          "/" +
-          (startDate.getMonth() + 1).toString() +
-          "/" +
-          startDate.getDate(),
-
-        time: startDate2.getHours().toString() + ":" + startDate2.getMinutes(),
-      });
+    if (filterText.formatdate !== null) {
+      const date =
+        filterText.formatdate.getFullYear() +
+        "/" +
+        (filterText.formatdate.getMonth() + 1).toString() +
+        "/" +
+        filterText.formatdate.getDate();
+      setFilterText({ ...filterText, chdate: date });
+    } else if (filterText.time !== null) {
+      const time =
+        filterText.time.getHours() + ":" + filterText.time.getMinutes();
+      setFilterText({ ...filterText, chtime: time });
     }
   }
-  console.log(filterText.formatdate + "," + filterText.time);
+
+  console.log(filterText);
   return (
     <div class="content-wrapper">
       <div class="row">
         <div class="col-md-12" style={{ marginTop: "10px" }}>
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Melon Top 100</h3>
+              <h3 class="card-title">Melon Top 100 이용자수 추이</h3>
             </div>
 
             <form>
               <div class="card-body" style={{ marginLeft: "20%" }}>
                 <div class="form-group row">
+                  <label class=" col-form-label">곡명</label>
+                  <div class="input-group col-sm-7">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="입력 해주세요"
+                      value={filterText.title}
+                      onChange={(e) =>
+                        setFilterText({ ...filterText, title: e.target.value })
+                      }
+                    />
+                    <label
+                      class=" col-form-label "
+                      style={{ marginLeft: "10%" }}
+                    >
+                      가수명&nbsp;
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="입력 해주세요"
+                      value={filterText.singer}
+                      onChange={(e) =>
+                        setFilterText({ ...filterText, singer: e.target.value })
+                      }
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
                   <label class=" col-form-label">날짜</label>
                   <div class="input-group col-sm-7">
-                    <div style={{ width: "45%" }}>
+                    <div style={{ width: "42%" }}>
                       <DatePicker
                         className="form-control"
                         dateFormat="yyyy/MM/dd"
-                        selected={startDate}
-                        onChange={(date) => setStartDate(date)}
+                        selected={filterText.formatdate}
+                        onChange={(date) =>
+                          setFilterText({ ...filterText, formatdate: date })
+                        }
                         isClearable={true}
                       />
                     </div>
                     <label
                       class=" col-form-label "
-                      style={{ marginLeft: "10%" }}
+                      style={{ marginLeft: "12%" }}
                     >
                       시간&nbsp;
                     </label>
                     <div style={{ width: "30%" }}>
                       <DatePicker
                         className="form-control"
-                        selected={startDate2}
-                        onChange={(date) => setStartDate2(date)}
+                        selected={filterText.time}
+                        onChange={(date) =>
+                          setFilterText({ ...filterText, time: date })
+                        }
                         showTimeSelect
                         showTimeSelectOnly
                         timeIntervals={30}
@@ -83,6 +122,7 @@ const MelonTop = () => {
 
         <div class="col-md-12" style={{ marginTop: "10px" }}>
           <div class="card card-success card-outline">
+            주호 - 내가 아니라도
             <div class="card-body pad table-responsive">
               <div
                 class="btn-group"
@@ -109,6 +149,11 @@ const MelonTop = () => {
               <table class="table table-bordered text-center">
                 <tbody>
                   <tr>
+                    <th colSpan={6}>
+                      {filterText.chdate + " ~ " + filterText.chdate + 24}
+                    </th>
+                  </tr>
+                  <tr>
                     <th>순위</th>
                     <th>좋아요</th>
                     <th>곡정보</th>
@@ -118,6 +163,7 @@ const MelonTop = () => {
                       유입<code>(스트카드)</code>
                     </th>
                   </tr>
+                  <tr></tr>
                   {datadummy.data.slice(0, 5).map((data, index) => (
                     <tr key={index}>
                       <td>{data.ranking}</td>
@@ -144,4 +190,4 @@ const MelonTop = () => {
   );
 };
 
-export default MelonTop;
+export default TopUserTrend;
