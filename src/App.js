@@ -17,6 +17,8 @@ import MelonTop from './components/Melon/MelonTop'
 import MelonDetail from './components/Melon/MelonDtail'
 import Toptrend from './components/Melon/TopTrend'
 import Topusertrend from './components/Melon/TopUserTrend'
+import WeekRank from './components/Melon/WeekRank';
+
 
 function App() {
   return (
@@ -40,6 +42,7 @@ function App() {
     <Route  path = {"/melondetail/:title"}  element = {<MelonDetail/>}></Route>   
     <Route  path = {"/toptrend"}  element = {<Toptrend/>}></Route>   
     <Route  path = {"/topusertrend"}  element = {<Topusertrend/>}></Route>   
+    <Route  path = {"/weekrank"}  element = {<WeekRank/>}></Route>   
     </Routes>
   </BrowserRouter>
   

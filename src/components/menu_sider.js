@@ -26,12 +26,18 @@ function Menu_sider() {
               </ul>
             </nav>
 
-          <aside class="main-sidebar sidebar-dark-primary elevation-4">
-          <a href="/" class="nav-link" style={{textAlign:'center'}}>
-            <img src="https://imgs.jobkorea.co.kr/img1/_whitebg/200X80/Co_Logo/Logo/2021/5/25/2y3xo008Rq_jXptfpq3r2eq0eoYgUm_ww2oq.png?v=202204131255&hash=r&serviceCode=CL" alt="Logo" class="brand-image img-circle elevation-3"/>
-            <span class="brand-text font-weight-light"></span>
-          </a>
-        <div class="sidebar">   
+          <aside class=" main-sidebar sidebar-dark-primary elevation-4">
+          
+          
+        <div class="sidebar"> 
+
+
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <img src="https://imgs.jobkorea.co.kr/img1/_whitebg/200X80/Co_Logo/Logo/2021/5/25/2y3xo008Rq_jXptfpq3r2eq0eoYgUm_ww2oq.png?v=202204131255&hash=r&serviceCode=CL" alt="Logo" class="brand-image img-circle elevation-3" style={{width:"60%", marginLeft:"15%"}}/>
+        <div class="info">
+          
+          </div>
+          </div>  
           <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
               <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"/>
@@ -125,10 +131,10 @@ function Menu_sider() {
                       </Link>  
                   </li>
                   <li class="nav-item">
-                    <a href="pages/layout/top-nav.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>4주 차트 순위</p>
-                    </a>
+                  <Link to="/weekrank" class="nav-link" onClick={()=>{setMulticheck(2); }}>
+                    <i class="nav-icon far fa-circle text-info"></i>
+                    4주 차트 순위             
+                      </Link> 
                   </li>
                   <li class="nav-item">
                     <a href="pages/layout/top-nav.html" class="nav-link">

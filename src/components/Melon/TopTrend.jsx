@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 const TopTrend = () => {
   const [filterText, setFilterText] = useState({ title: "", singer: "" });
-  console.log(filterText);
+
   return (
     <div class="content-wrapper">
-      <div class="row">
+      <div class="row p-3">
         <div class="col-md-12" style={{ marginTop: "10px" }}>
           <div class="card">
             <div class="card-header">
@@ -54,6 +54,15 @@ const TopTrend = () => {
                 </div>
               </div>
             </form>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-12 col-lg-2">
+          <div class="mb-3">
+            <button class="btn btn-success" style={{ marginRight: "5px" }}>
+              Melon
+            </button>
+            <button class="btn btn-warning">Genie</button>
           </div>
         </div>
 

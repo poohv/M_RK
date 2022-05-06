@@ -29,10 +29,9 @@ const TopUserTrend = () => {
     }
   }
 
-  console.log(filterText);
   return (
     <div class="content-wrapper">
-      <div class="row">
+      <div class="row p-3">
         <div class="col-md-12" style={{ marginTop: "10px" }}>
           <div class="card">
             <div class="card-header">
