@@ -137,10 +137,11 @@ function Menu_sider() {
                       </Link> 
                   </li>
                   <li class="nav-item">
-                    <a href="pages/layout/top-nav.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>4주 차트 순위 추이</p>
-                    </a>
+                  
+                  <Link to="/Weekranktrend" class="nav-link" onClick={()=>{setMulticheck(2); }}>
+                    <i class="nav-icon far fa-circle text-info"></i>
+                    4주 차트 순위 추이            
+                      </Link> 
                   </li>
                   <li class="nav-item">
                     <a href="pages/layout/top-nav.html" class="nav-link">

@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import Button from "react-bootstrap/Button";
 
 const WeekRank = () => {
   const [filterText, setFilterText] = useState({ time: "", formatdate: "" });
@@ -27,7 +28,7 @@ const WeekRank = () => {
   }
 
   const renderTooltip = (props) => (
-    <Tooltip color="green" id="button-tooltip" {...props}>
+    <Tooltip id="button-tooltip" {...props}>
       이전시간
       <br />
       이전날짜
@@ -99,8 +100,8 @@ const WeekRank = () => {
 
                 <div class="text-center">
                   <OverlayTrigger
-                    placement="left"
-                    delay={{ show: 250, hide: 400 }}
+                    placement="auto-start"
+                    delay={{ show: 100, hide: 200 }}
                     overlay={renderTooltip}
                   >
                     <button
